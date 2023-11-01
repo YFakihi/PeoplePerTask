@@ -18,6 +18,8 @@
     --white:#FFFFFF;
     --hovercolor:#0D3B66;
 }
+
+
 .sign-style-color{
     background-color: var(--primaryorange);
     border-color: var(--primaryorange);
@@ -50,6 +52,21 @@
     background-color:var(--white);
     transform: scale(1.1);
   }
-.section-famous-freelancers{
+.section-famous-freelancers,.hero{
   background-color:var(--secondaryorange);
+}
+.z-index-modifier{
+  z-index: 10;
+}
+.carousel-button-color{
+  background-color: var(--primaryorange);
+  border-color: var(--primaryorange);
+}
+@media screen and (max-width: 1000px) {
+  .card-flex{
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
 }
