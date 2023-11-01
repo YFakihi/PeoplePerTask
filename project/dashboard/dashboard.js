@@ -22,23 +22,23 @@ closes.addEventListener('click', () => {
 
 const delet_user = document.querySelectorAll(".delet_user")
 const freelancer = document.querySelectorAll(".freelancer")
-for(let i=0;i<delet_user.length;i++){
-    delet_user[i].addEventListener('click',  () => {
+for (let i = 0; i < delet_user.length; i++) {
+    delet_user[i].addEventListener('click', () => {
         freelancer[i].style.display = 'none'
     })
 }
 
 // edit
-const modal =document.querySelector('.modal');
+const modal = document.querySelector('.modal');
 const edit = document.querySelectorAll('.edit');
-for(let j=0;j<edit.length;j++){
-edit[j].addEventListener('click', ()=>{
-    modal.style.display = 'flex'
-    editFreelacerData();
-})
+for (let j = 0; j < edit.length; j++) {
+    edit[j].addEventListener('click', () => {
+        modal.style.display = 'flex'
+        editFreelacerData(j);
+    })
 }
-function editFreelacerData(){
-    
+function editFreelacerData(j) {
+
     const form = document.getElementById("forms");
     const save = document.querySelector('.save')
     const annuler = document.querySelector('.annuler')
@@ -57,10 +57,25 @@ function editFreelacerData(){
         const title_user = document.querySelector('.title_user').value;
         const status = document.querySelector('.status').value;
         const position = document.querySelector('.position').value;
-        if (first_name.trim() === "" || email.trim() === "" || !validateName(first_name) ) {
+        if (first_name.trim() === "" || email.trim() === "" || last_name.trim() === "" || title_user.trim() === "" || status.trim() === "" || position.trim() === "" || !validateEmail(email)) {
             error.textContent = 'Please fill in all fields correctly'
         } else {
+            console.log('5')
             error.textContent = ''
+            saveEdit(j);
+            function saveEdit(i) {
+                const f_email = document.querySelectorAll('.f_email')[i];
+                const f_name = document.querySelectorAll('.f_name')[i];
+                const f_title = document.querySelectorAll('.f_title')[i];
+                const f_status = document.querySelectorAll('.f_status')[i];
+                const f_position = document.querySelectorAll('.f_position')[i];
+                f_name.textContent = first_name + last_name;
+                f_email.textContent = email;
+                f_position.textContent = position;
+                f_status.textContent = status;
+                f_title.textContent = title_user;
+            }
+        //     
         }
     });
     annuler.addEventListener('click', () => {
@@ -68,15 +83,16 @@ function editFreelacerData(){
     })
 
 
+
+
     function validateEmail(email) {
-        let emailRegex = /^[a-zA-Z0-9/._%+-]+@[a-zA-Z]+\.[a-z]{2,4}$/
+        const emailRegex = /^[A-Z]+$/i;
         return emailRegex.test(email);
-        
+
     }
     function validateName(name) {
-        let nameRegex = /^[a-b]{3,50}/i;
+        const nameRegex = /\D{6,}$/i;
         return nameRegex.test(name)
-
-        
     }
 };
+// edit end
