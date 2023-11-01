@@ -50,3 +50,6 @@
     background-color:var(--white);
     transform: scale(1.1);
   }
+.section-famous-freelancers{
+  background-color:var(--secondaryorange);
+}
