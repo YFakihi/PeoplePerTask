@@ -39,7 +39,7 @@
     background-color: var(--primaryorange);
     border-color: var(--primaryorange);
   }
-  .text-half-orange-effect,{
+  .text-half-orange-effect{
     color: var(--primaryorange);
   }
   .category-card-style{
