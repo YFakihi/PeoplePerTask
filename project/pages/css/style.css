@@ -39,7 +39,7 @@
     background-color: var(--primaryorange);
     border-color: var(--primaryorange);
   }
-  .text-half-orange-effect{
+  .text-half-orange-effect,{
     color: var(--primaryorange);
   }
   .category-card-style{
@@ -61,6 +61,9 @@
 .carousel-button-color{
   background-color: var(--primaryorange);
   border-color: var(--primaryorange);
+}
+.footer-color{
+  background-color: var(--primaryorange);
 }
 @media screen and (max-width: 1000px) {
   .card-flex{
