@@ -58,9 +58,6 @@ function editFreelacerData(j) {
         return emailRegex.test(email);
 
     }
-    function validateName(name) {
-        const nameRegex = /\D{6,}$/i;
-        return nameRegex.test(name)
-    }
+    
 };
 // edit end
