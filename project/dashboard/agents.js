@@ -32,7 +32,7 @@ function editFreelacerData(j) {
             console.log('5')
             error.textContent = ''
             saveEdit(j);
-            
+
             function saveEdit(i) {
                 const f_email = document.querySelectorAll('.f_email')[i];
                 const f_name = document.querySelectorAll('.f_name')[i];
@@ -46,7 +46,13 @@ function editFreelacerData(j) {
                 f_title.textContent = title_user;
             }
             modal.style.display = 'none'
-        //     
+            first_name = "";
+            last_name = "";
+            email = "";
+            position = "";
+            status = "";
+            title_user = "";
+            //     
         }
     });
     annuler.addEventListener('click', () => {
@@ -58,6 +64,6 @@ function editFreelacerData(j) {
         return emailRegex.test(email);
 
     }
-    
+
 };
 // edit end
