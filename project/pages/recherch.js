@@ -4,10 +4,10 @@ function search() {
     const elements = document.querySelectorAll(".card-body h4");
 
     for (var i = 0; i < elements.length; i++) {
-        let text = elements[i].textContent || elements[i].innerHTML;
+        let text = elements[i].textContent ;
 
         if (text.toUpperCase().indexOf(srinput) > -1) {
-            elements[i].closest('.card').style.display = "";
+            elements[i].closest('.card').style.display = "block";
         } else {
             elements[i].closest('.card').style.display = "none";
         document.getElementById('search-addon').textContent="not found"
