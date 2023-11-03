@@ -10,7 +10,7 @@ function search() {
             elements[i].closest('.card').style.display = "block";
         } else {
             elements[i].closest('.card').style.display = "none";
-        document.getElementById('search-addon').textContent="not found"
+      
             
         }
     }
