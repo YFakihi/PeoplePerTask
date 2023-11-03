@@ -164,6 +164,9 @@ a.sidebar_link:hover {
     position: relative;
     cursor: pointer;
 }
+.cursor{
+    cursor: pointer;
+}
 
 
 /* agent */

@@ -26,6 +26,7 @@ function editFreelacerData(j) {
         const title_user = document.querySelector('.title_user').value;
         const status = document.querySelector('.status').value;
         const position = document.querySelector('.position').value;
+        
         if (first_name.trim() === "" || email.trim() === "" || last_name.trim() === "" || title_user.trim() === "" || status.trim() === "" || position.trim() === "" || !validateEmail(email)) {
             error.textContent = 'Please fill in all fields correctly'
         } else {
@@ -45,6 +46,9 @@ function editFreelacerData(j) {
                 f_status.textContent = status;
                 f_title.textContent = title_user;
             }
+            Swal.fire(
+                'Changes have been saved'
+            )
             modal.style.display = 'none'
             first_name = "";
             last_name = "";
@@ -52,6 +56,7 @@ function editFreelacerData(j) {
             position = "";
             status = "";
             title_user = "";
+            
             //     
         }
     });

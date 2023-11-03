@@ -59,6 +59,18 @@
     background-color:var(--white);
     transform: scale(1.1);
   }
+<<<<<<< HEAD
+  .mrgntop{
+    margin-top: 2rem;
+  }
+  .contact-background{
+    background-color: var(--secondaryorange);
+  }
+
+  
+
+  
+=======
 .section-famous-freelancers,.hero{
   background-color:var(--secondaryorange);
 }
@@ -230,6 +242,10 @@
   animation: slide-animate2 20s  infinite;
   animation-delay: 3s;
 }
+<<<<<<< HEAD
 .card-pricing-color{
   background-color: var(--primaryorange);
 }
+=======
+>>>>>>> a4b3b8db497f249a5af4d4a376398c0b627d3331
+>>>>>>> b0a7c307c67d189013ed23048a6504d6e579f310
