@@ -22,8 +22,10 @@ closes.addEventListener('click', () => {
 
 const delet_user = document.querySelectorAll(".delet_user")
 const freelancer = document.querySelectorAll(".freelancer")
-for(let i=0;i<delet_user.length;i++){
-    delet_user[i].addEventListener('click',  () => {
+for (let i = 0; i < delet_user.length; i++) {
+    delet_user[i].addEventListener('click', () => {
         freelancer[i].style.display = 'none'
     })
 }
+
+// edit
