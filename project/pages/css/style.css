@@ -19,7 +19,6 @@
     --hovercolor:#0D3B66;
 }
 
-<<<<<<< HEAD
 #sidebar{
   height: 100%;
 }
@@ -27,8 +26,6 @@
    background-color: #FF6300;
 }
 
-=======
->>>>>>> ee40a493ea3e886d369791e8541bf816569c36a6
 
 .sign-style-color{
     background-color: var(--primaryorange);
@@ -62,50 +59,6 @@
     background-color:var(--white);
     transform: scale(1.1);
   }
-<<<<<<< HEAD
-
-
-/*-------------------------------------*/
-.hide{
-  display: none;
-}
-
-body{
-  background: #fff;
-  color: #000;
-}
-
-button{
-  cursor: pointer;
-  padding: 10px 20px;
-}
-
-.dark-mode{
-  background: #000;
-  color: #fff;
-}
-
-
-
-
-
-
-#btnn:hover{
-  background-color: orangered;
-}
-
-  .py-6 {
-    margin-top: 5rem; /* Adjust the value as needed */
-  }
-  /* .container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-  } */
-  .search{
-    display: none;
-  }
-=======
 .section-famous-freelancers,.hero{
   background-color:var(--secondaryorange);
 }
@@ -277,4 +230,3 @@ button{
   animation: slide-animate2 20s  infinite;
   animation-delay: 3s;
 }
->>>>>>> ee40a493ea3e886d369791e8541bf816569c36a6
