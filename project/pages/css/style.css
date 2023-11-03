@@ -230,3 +230,6 @@
   animation: slide-animate2 20s  infinite;
   animation-delay: 3s;
 }
+.card-pricing-color{
+  background-color: var(--primaryorange);
+}
