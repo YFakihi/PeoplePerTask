@@ -19,6 +19,7 @@
     --hovercolor:#0D3B66;
 }
 
+<<<<<<< HEAD
 #sidebar{
   height: 100%;
 }
@@ -26,6 +27,8 @@
    background-color: #FF6300;
 }
 
+=======
+>>>>>>> ee40a493ea3e886d369791e8541bf816569c36a6
 
 .sign-style-color{
     background-color: var(--primaryorange);
@@ -59,6 +62,7 @@
     background-color:var(--white);
     transform: scale(1.1);
   }
+<<<<<<< HEAD
 
 
 /*-------------------------------------*/
@@ -101,3 +105,176 @@ button{
   .search{
     display: none;
   }
+=======
+.section-famous-freelancers,.hero{
+  background-color:var(--secondaryorange);
+}
+.z-index-modifier{
+  z-index: 10;
+}
+.carousel-button-color{
+  background-color: var(--primaryorange);
+  border-color: var(--primaryorange);
+}
+.footer-color{
+  background-color: var(--primaryorange);
+}
+@media screen and (max-width: 768px) {
+  .card-flex{
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+}
+
+.display-none-import{
+  display: none !important;
+}
+@keyframes slide-animate{
+  50%{
+     top: 40%;
+     right: 65%;
+  }
+  100%{
+     top: 50%;
+     right: 50%;
+
+  }  
+}
+
+@keyframes fade-in-out{
+  0%{
+     opacity: 1;
+     
+  }
+  50%{
+     opacity: 0;
+  }  
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg)  scale(1);
+    }
+    50%{
+      
+      transform: rotate(360deg)  scale(1.5);    
+    }
+    100%{
+      transform: rotate(0deg)  scale(1);
+    }
+  }
+
+@keyframes scale-and-rotateY {
+    0% {
+      transform: rotate(-4deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    75% {
+      transform: rotate(8deg);
+    }
+    100% {
+      transform: rotate(-4deg);
+    }
+  }
+  @keyframes slide-animate{
+    25%{
+       top: 50%;
+       left: 10%;
+    }
+    50%{
+      top: 10%;
+      left: 0%;
+    }
+    75%{
+      top: 5%;
+      left: 20%;  
+    }
+    100%{
+       top: 30%;
+       left: 80%;
+ 
+    }  
+    
+    
+ }
+ @keyframes slide-animate2{
+  25%{
+     top: 10%;
+     left: 100%;
+  }
+
+  100%{
+     top: 30%;
+     left: 30%;
+
+  }  
+  
+}
+@keyframes slide-animate3{
+  25%{
+    top: 90%;
+    right: 80%;
+  }
+  50%{
+
+    top: 5%;
+    left: 20%; 
+  }
+  75%{
+    top: 10%;
+    left: 0%;
+  }
+  100%{
+
+     top: 90%;
+     left: 20%;
+  }  
+  
+  
+}
+
+ 
+
+#setting-icon-animation{
+  animation: rotate 5s ease-in-out  infinite;  
+  animation-delay: 1s;
+}
+#flower-img-animation{
+  animation: scale-and-rotateY 5s ease-in-out  infinite ;
+}
+#flower-small-animation,#flowerxl-img-animation{
+  animation: scale-and-rotateY 5s ease-in-out  infinite;
+}
+.scale-hero-img{
+  transition: transform 0.2s;
+}
+#circles-animation1,#testimontial-animation1{
+  top: 30%;
+  left: 80%;
+  transform: translate(50%,-50%);
+  animation: slide-animate 30s  infinite;
+  animation-delay: 5s;
+}
+#circles-animation2{
+  top: 90%;
+  left: 20%;
+  transform: translate(50%,-50%);
+  animation: slide-animate3 30s  infinite;
+
+}
+#circles-animation3,#testimontial-animation2{
+
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%,50%);
+  animation: slide-animate2 20s  infinite;
+  animation-delay: 3s;
+}
+>>>>>>> ee40a493ea3e886d369791e8541bf816569c36a6
