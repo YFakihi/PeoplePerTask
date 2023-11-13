@@ -11,14 +11,4 @@ for (let i=0 ; i<quistion.length;i++){
     })
 
 }
-//read move
-// const modal = document.querySelector('.modal')
-// const open = document.querySelector('.hero-button')
-// const close = document.querySelector('.close')
-// open.addEventListener('click',() =>{
-//     modal.showModal();
-// })
-// close.addEventListener('click',()=>{
-//     modal.close();
-// })
 
