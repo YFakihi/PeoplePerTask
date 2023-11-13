@@ -9,9 +9,9 @@ function search() {
         if (text.toUpperCase().indexOf(srinput) > -1) {
             elements[i].closest('.card').style.display = "block";
         } else {
-            elements[i].closest('.card').style.display = "none";
-      
+            elements[i].closest('.card').style.display = "none";   
             
+
         }
     }
 }
