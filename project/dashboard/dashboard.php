@@ -1,52 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include('head.php');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-
-<body>
-    <div class="wrapper">
-        <aside id="sidebar" class="side">
-            <div class="h-100">
-                <div class="sidebar_logo d-flex align-items-end">
-                    <img src="img/logo.svg" alt="icon">
-                    <a href="#" class="nav-link text-white-50">Dashboard</a>
-                    <img class="close align-self-start" src="img/close.svg" alt="icon">
-                </div>
-
-                <ul class="sidebar_nav">
-                    <li class="sidebar_item active" style="width: 100%;">
-                        <a href="dashboard.html" class="sidebar_link"> <img src="img/1. overview.svg" alt="icon">Overview</a>
-                    </li>
-                    <li class="sidebar_item">
-                        <a href="agents.html" class="sidebar_link"> <img src="img/agents.svg" alt="icon">Agents</a>
-                    </li>
-                    <li class="sidebar_item">
-                        <a href="task.html" class="sidebar_link"> <img src="img/task.svg" alt="icon">Task</a>
-                    </li>
-                    <li class="sidebar_item">
-                        <a href="contact.html" class="sidebar_link"><img src="img/agent.svg" alt="icon">Contact</a>
-                    </li>
-                    <li class="sidebar_item">
-                        <a href="#" class="sidebar_link"><img src="img/articles.svg" alt="icon">Articles</a>
-                    </li>
-
-                </ul>
-                <div class="line"></div>
-                <a href="#" class="sidebar_link"><img src="img/settings.svg" alt="icon">Settings</a>
-
-
-            </div>
-        </aside>
+?>
         <div class="main">
             <nav class="navbar justify-content-space-between pe-4 ps-2">
                 <button class="btn open">
@@ -84,7 +39,7 @@
                         </div>
                     </div>
                     <div class="inline"></div>
-                    <div class="name">lahcen Admin</div>
+                    <div class="name">Yasin Admin</div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
@@ -100,83 +55,19 @@
                 </div>
             </nav>
             <section class="overview">
-                <div class="row p-4">
+                <div class="row p-4 ">
                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body  p-4">
-                                <div class="d-flex justify-content-between px-md-1">
-                                    <div>
-                                        <p class="mb-0">Projects</p>
-                                        <div class="mt-4">
-                                            <h3><strong>18</strong></h3>
-                                            <p><strong>2</strong> Completed</p>
-                                        </div>
-                                    </div>
-                                    <div class="cursor">
-                                        <img src="img/project-icon-1.svg" alt="icon">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                     <?php
+                        include('static_proje.php');
+                     ?>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="d-flex justify-content-between px-md-1">
-                                    <div>
-                                        <p class="mb-0">Active Task</p>
-                                        <div class="mt-4">
-                                            <h3><strong>132</strong></h3>
-                                            <p><strong>32</strong> Completed</p>
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <img src="img/project-icon-2.svg" alt="icon">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="d-flex justify-content-between px-md-1">
-                                    <div>
-                                        <p class="mb-0">Teams</p>
-                                        <div class="mt-4">
-                                            <h3><strong>12</strong></h3>
-                                            <p><strong></strong> Completed</p>
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <img src="img/project-icon-3.svg" alt="icon">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="d-flex justify-content-between px-md-1">
-                                    <div>
-                                        <p class="mb-0">Projects</p>
-                                        <div class="mt-4">
-                                            <h3><strong>76%</strong></h3>
-                                            <p><strong>57%</strong> Completed</p>
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <img src="img/project-icon-4.svg" alt="icon">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+             
+                    <?php
+                        include('static_catego.php');
+                     ?>
+                    <?php
+                        include('static_users.php');
+                     ?>
                 </div>
             </section>
 
