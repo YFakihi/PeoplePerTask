@@ -184,8 +184,10 @@ a.sidebar_link:hover {
     height: 2rem;
     cursor: pointer;
 }
-
-
+.t-header-style{
+    background-color: rgba(197, 129, 129, 0.7) ;
+    color: white;
+}
 /* delet an edit user */
 .edit,.delet_user{
     cursor: pointer;
