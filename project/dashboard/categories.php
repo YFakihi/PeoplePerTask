@@ -139,7 +139,6 @@ if (!$result){
                  <tr>
                     <td><?php echo $row['id_cat'];?></td>                                          
                     <td><?php echo $row['mame_cat'];?></td>
-            
                     <td><a href = "update_cat.php?id=<?php echo $row['id_cat'];?>" class = "btn btn-info">Update</a></td>
                     <td><a href = "delete_cat.php?id=<?php echo $row['id_cat'];?>" class = "btn btn-danger">Delete</a></td>
                  </tr>

@@ -96,9 +96,8 @@ include('head.php');
                         <?php }?>
                       
                        </select>
-
-
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-success" name="add_f" value="Add">

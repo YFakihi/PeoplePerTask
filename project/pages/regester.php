@@ -20,14 +20,14 @@ include('header.php')
                     Create an account
                   </h2>
 
-                  <form id="regester-form">
+                  <form action="sub_signup.php" method= "post" novalidate>
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example1cg"
-                        >Your Name</label
+                        >username</label
                       >
                       <input
                         type="text"
-                        id="name_inp"
+                        id="name_inp" name = "name"
                         class="form-control form-control-lg"
                       />
                       <span id="name_reg_err" class="text text-danger"></span>
@@ -39,7 +39,7 @@ include('header.php')
                       >
                       <input
                         type="text"
-                        id="mail_inp"
+                        id="mail_inp" name = "email"
                         class="form-control form-control-lg"
                       />
                       <span id="email_reg_err" class="text text-danger"></span>
@@ -51,7 +51,7 @@ include('header.php')
                       >
                       <input
                         type="password"
-                        id="password_inp"
+                        id="password_inp"name = "password"
                         class="form-control form-control-lg"
                       />
                       <span
@@ -66,7 +66,7 @@ include('header.php')
                       >
                       <input
                         type="password"
-                        id="password_rep_inp"
+                        id="password_rep_inp" name = "confpassword"
                         class="form-control form-control-lg"
                       />
                       <span
@@ -84,7 +84,7 @@ include('header.php')
 
                     <p class="text-center text-muted mt-5 mb-0">
                       Have already an account?
-                      <a href="#!" class="fw-bold text-body"
+                      <a href="login.php" class="fw-bold text-body"
                         ><u>Login here</u></a
                       >
                     </p>

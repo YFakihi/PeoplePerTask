@@ -67,6 +67,7 @@ else{
         <div class="col-md-6">
             <h3>Edit User</h3>
             <form action="update_cat.php?id_new=<?php echo $id;?>" method="post" id="form">
+
                 <div class="form-group">
                     <label for="email">mame_cat</label>
                     <input class="form-control" type="text" name="mame_cat" value="<?php echo $row['mame_cat'] ?>">

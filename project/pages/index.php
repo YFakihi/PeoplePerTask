@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('header.php')
 ?>
   <!-- hero section -->
@@ -36,6 +37,32 @@ include('header.php')
       </div>
     </div>
   </section>
+  <?php
+
+$query =  " SELECT * FROM project";
+//inner join pour select name
+$result = mysqli_query($conn,$query);
+
+while($row = mysqli_fetch_assoc($result)){
+
+  ?>
+
+
+
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=" images/929-1697015899.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo $row['titre'];?></h5>
+    <p class="card-text"><?php echo $row['description'];?>.</p>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
+  </section>
+
+  <?php
+
+}
+?>
   <!-- category section -->
   <section class="category my-4 py-4">
       <div class="container ">
@@ -49,7 +76,6 @@ include('header.php')
                   projects to life. We've organized our talent pool into various categories to help you find the perfect
                   match for your unique needs.Our team members are experts in all facets of the design industry including:
                   print design, illustration, branding, identity and more.</p>
-              </div>
             </div>
           </div>
         </div>
