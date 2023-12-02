@@ -79,7 +79,7 @@ else{
                          $query = "SELECT * from user";
                          $result = mysqli_query($conn, $query);
                          foreach($result as $res){  ?>
-                            <option value=" <?php   echo $res['id']?>"><?php echo $res['mame']?></option>
+                            <option value=" <?php   echo $res['id']?>"><?php echo $res['username']?></option>
                         <?php }?>
                       
                        </select>

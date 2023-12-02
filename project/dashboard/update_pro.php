@@ -26,6 +26,7 @@ if(isset($_POST['update_pro']))
         $idnew = $_GET['id_new'];
     }
 
+    $image = $_POST['image'];
     $titre = $_POST['titre'];
     $id_cat = $_POST['Cat_name'];
     $id = $_POST['f_id_user'];
@@ -35,7 +36,7 @@ if(isset($_POST['update_pro']))
 
    
 
-    $query = "UPDATE project SET  titre = '$titre', id_cat = '$id_cat'
+    $query = "UPDATE project SET image = '$image',  titre = '$titre', id_cat = '$id_cat'
     , id = '$id', description = '$description'
     WHERE id_project = '$idnew'";
 
@@ -70,6 +71,10 @@ else{
         <div class="col-md-6">
             <h3>Edit User</h3>
             <form action="update_pro.php?id_new=<?php echo $id;?>" method="post" id="form">
+            <div class="form-group">
+                        <label for="f_name">image:</label>
+                        <input type="file" name="image" class="form-control">
+                    </div>
                 <div class="form-group">
                     <label for="email">titre</label>
                     <input class="form-control" type="text" name="titre" value="<?php echo $row['titre'] ?>">
@@ -95,7 +100,7 @@ else{
                          $query = "SELECT * from user";
                          $result = mysqli_query($conn, $query);
                          foreach($result as $res){  ?>
-                            <option value=" <?php   echo $res['id']?>"><?php echo $res['mame']?></option>
+                            <option value=" <?php   echo $res['id']?>"><?php echo $res['username']?></option>
                         <?php }?>
                       
                        </select>

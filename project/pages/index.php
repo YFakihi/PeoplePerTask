@@ -1,6 +1,6 @@
 <?php
-session_start();
-include('header.php')
+
+include('header.php');
 ?>
   <!-- hero section -->
   <section class="hero">
@@ -37,32 +37,30 @@ include('header.php')
       </div>
     </div>
   </section>
+  <section class="row m-2">
   <?php
+  $query = "SELECT * FROM project";
+  $result = mysqli_query($conn, $query);
 
-$query =  " SELECT * FROM project";
-//inner join pour select name
-$result = mysqli_query($conn,$query);
 
-while($row = mysqli_fetch_assoc($result)){
-
+  while ($row = mysqli_fetch_assoc($result)) {
   ?>
-
-
-
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=" images/929-1697015899.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $row['titre'];?></h5>
-    <p class="card-text"><?php echo $row['description'];?>.</p>
-    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-  </div>
-</div>
-  </section>
-
+    <div class="col-md-4 mb-4"> 
+      <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="images/<?php echo $row['image']; ?>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><?php echo $row['titre']; ?></h5>
+          <p class="card-text"><?php echo $row['description']; ?>.</p>
+         
+        </div>
+      </div>
+    </div>
   <?php
+  }
+  ?>
+</section>
 
-}
-?>
+
   <!-- category section -->
   <section class="category my-4 py-4">
       <div class="container ">
@@ -79,31 +77,33 @@ while($row = mysqli_fetch_assoc($result)){
             </div>
           </div>
         </div>
-        <div class="row ">
-          <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-            <div class="card category-card-style my-2" >
-              <div class="d-flex justify-content-center ">
-                <img src="./images/categorycoding.svg" alt="category">
-              </div>
-              <div class="card-body text-center">
-                <h5 class="card-title fw-semibold">Light card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+
+        <?php
+  $query = "SELECT * FROM categores LIMIT 4";
+ 
+  $result = mysqli_query($conn, $query);
+
+
+  while ($row = mysqli_fetch_assoc($result)) {
+  ?>
+
+  
+           <div class="col-xl-3 col-lg-4 col-md-6 col-12">
             <div class="card category-card-style my-2">
               <div class="d-flex justify-content-center ">
                 <img src="./images/categoryillustration.svg" alt="">
               </div>
               <div class="card-body text-center">
-                <h5 class="card-title fw-semibold">Light card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
+                <h5 class="card-title fw-semibold"></h5>
+                <p class="card-text"><?php echo $row['mame_cat']; ?></p>
               </div>
             </div>
           </div>
+
+          <?php
+  }
+          ?>
+          <!--
           <div class="col-xl-3 col-lg-4 col-md-6 col-12">
             <div class="card category-card-style my-2">
               <div class="d-flex justify-content-center ">
@@ -175,8 +175,10 @@ while($row = mysqli_fetch_assoc($result)){
                   content.</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
+    
+  
   </section>
     <!-- famous freelancers -->
     <section class="section-famous-freelancers my-4 py-4">

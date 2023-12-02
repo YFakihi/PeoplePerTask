@@ -1,5 +1,8 @@
 <?php
 include('../dashboard/db.php');?>
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +64,7 @@ include('../dashboard/db.php');?>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
-
+<!-- 
           <li class="nav-item">
            <select class="nav-link"  name="lang" id="">
             <option class="nav-link"  value="">Languges</option>
@@ -70,7 +73,8 @@ include('../dashboard/db.php');?>
            </select>
 
 
-          </li>
+          </li> -->
+          
         </ul>
         
         <form class="d-flex input-group w-auto">
@@ -80,10 +84,31 @@ include('../dashboard/db.php');?>
             <img src="images/searchicon.svg" alt="">
           </span>
         </form> 
-
-
+        
+      <?php if (!isset($_SESSION['email'])): ?>
         <a class="btn btn-primary me-2 sign-style-color" href="regester.php" role="button">Sign up</a>
         <a class="btn btn-primary me-2 sign-style-color" href="login.php" role="button">Sign in</a>
+
+
+
+        
+        <?php else: ?>
+          <?php echo $_SESSION['email']; ?>
+          <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
+                                <img src="images/icons8-user-32.png" alt="icon">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end position-absolute">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Account Setting</a>
+                                <a class="dropdown-item" href="logout.php">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+          <!-- <a class="btn btn-primary me-2 sign-style-color" href="logout.php" role="button">Logout</a> -->
+      <?php endif; ?>
+        
       </div>
     </div>
   </nav>

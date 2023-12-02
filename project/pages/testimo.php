@@ -30,7 +30,7 @@ include('../dashboard/db.php');?>
 <div class="row ">
 
     <?php
-        $sql = " select * from testimoniales ORDER BY Id_Testimonials DESC LIMIT 1";
+        $sql = " SELECT * from testimoniales ORDER BY Id_Testimonials DESC LIMIT 1";
        
         $res = mysqli_query($conn,$sql);
         if(!$res){

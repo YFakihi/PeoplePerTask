@@ -1,6 +1,7 @@
 <?php include('db.php'); ?>
 <?php
 include('head.php');
+session_start();
 
 ?>
         <div class="main">
@@ -40,7 +41,7 @@ include('head.php');
                         </div>
                     </div>
                     <div class="inline"></div>
-                    <div class="name">yasin Admin</div>
+                    <div class="name"><?php echo $_SESSION['email']; ?></div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
@@ -74,10 +75,14 @@ include('head.php');
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="f_name">titre:</label>
-                        <input type="text" name="titre" class="form-control">
+                        <label for="f_name">image:</label>
+                        <input type="file" name="image" class="form-control">
                     </div>
 
+                    <div class="form-group">
+                        <label for="f_name">Title:</label>
+                        <input type="text" name="titre" class="form-control">
+                    </div>
                     <div class="form-group">
                       
 
@@ -104,13 +109,13 @@ include('head.php');
                          $query = "SELECT * from user";
                          $result = mysqli_query($conn, $query);
                          foreach($result as $res){  ?>
-                            <option value=" <?php   echo $res['id']?>"><?php echo $res['mame']?></option>
+                            <option value=" <?php   echo $res['id']?>"><?php echo $res['username']?></option>
                         <?php }?>
                       
                        </select>
-
-
                     </div>
+
+
                     <div class="form-group">
                         <label for="f_id_user">description:</label>
                         <input type="text" name="description" class="form-control">
@@ -127,6 +132,7 @@ include('head.php');
 <?php
 if(isset($_POST['add_p']))
 {
+    $image = $_POST['image'];
     $titre = $_POST['titre'];
     $id_cat = $_POST['Cat_name'];
     $id = $_POST['f_id_user'];
@@ -135,7 +141,7 @@ if(isset($_POST['add_p']))
     if(empty($titre)){
         header('location:projects.php? message = fill all data!');
     }else{
-    $query = "INSERT INTO  project (titre, id_cat, id,description) VALUES ('$titre', '$id_cat','$id','$description')";
+    $query = "INSERT INTO  project (image,titre, id_cat, id,description) VALUES ('$image','$titre', '$id_cat','$id','$description')";
     $result = mysqli_query($conn, $query);
     }
  
@@ -158,6 +164,7 @@ if (!$result){
             <tr>
      
                             <th>id_project</th>
+                            <th>image</th>
                             <th>Titre</th>
                             <th>name_cat</th>
                  
@@ -174,7 +181,7 @@ if (!$result){
  
 
         
-                         $query =  " SELECT p.* ,c.mame_cat ,u.mame FROM project p INNER JOIN categores c
+                         $query =  " SELECT p.* ,c.mame_cat ,u.username FROM project p INNER JOIN categores c
                          ON  p.id_cat = c.id_cat 
                          INNER JOIN user u ON  u.id = p.id";
 
@@ -211,10 +218,11 @@ if (!$result){
 
                  <tr>
                     <td><?php echo $row['id_project'];?></td>                                          
+                    <td><?php echo $row['image'];?></td>                                          
                     <td><?php echo $row['titre'];?></td>
                     <td><?php echo $row['mame_cat'];?></td>
          
-                    <td> <?php echo $row['mame'];?></td>
+                    <td> <?php echo $row['username'];?></td>
                     <td> <?php echo $row['description'];?></td>
                     <td><a href = "update_pro.php?id=<?php echo $row['id_project'];?>" class = "btn btn-info">Update</a></td>
                     <td><a href = "delete_pro.php?id=<?php echo $row['id_project'];?>" class = "btn btn-danger">Delete</a></td>

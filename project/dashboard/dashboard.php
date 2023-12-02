@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION["email"]))
 {
-  header("location:login.php ");
+  header("location:../pages/login.php ");
 }
 
 ?>
@@ -45,7 +45,8 @@ if(!isset($_SESSION["email"]))
                         </div>
                     </div>
                     <div class="inline"></div>
-                    <div class="name">Yasin Admin</div>
+                    <div class="name"><?php echo $_SESSION['email']; ?></div>
+                    
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">

@@ -1,6 +1,7 @@
 <?php include('db.php'); ?>
 <?php
 include('head.php');
+session_start();
 
 ?>
         <div class="main">
@@ -40,7 +41,7 @@ include('head.php');
                         </div>
                     </div>
                     <div class="inline"></div>
-                    <div class="name">yasin Admin</div>
+                    <div class="name"><?php echo $_SESSION['email']; ?></div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
@@ -74,7 +75,7 @@ include('head.php');
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="f_name">Name:</label>
+                        <label for="f_name">username:</label>
                         <input type="text" name="u_name" class="form-control">
                     </div>
 
@@ -105,7 +106,7 @@ if(isset($_POST['add_u']))
     if(empty($u_name)){
         header('location:users.php? message = fill all data!');
     }else{
-    $query = "INSERT INTO user (mame, PASSWORD, email) VALUES ('$u_name', '$u_pass', '$u_email')";
+    $query = "INSERT INTO user (username, PASSWORD, email) VALUES ('$u_name', '$u_pass', '$u_email')";
     $result = mysqli_query($conn, $query);
     }
  
@@ -123,7 +124,7 @@ if (!$result){
         <thead>
             <tr>
                               <th>id_user</th>
-                            <th>name</th>
+                            <th>username</th>
                             <th>password</th>
                             <th>email</th>
                             <th>Update</th>
@@ -146,7 +147,7 @@ if (!$result){
                         ?>
                  <tr>
                     <td><?php echo $row['id'];?></td>                                          
-                    <td><?php echo $row['mame'];?></td>
+                    <td><?php echo $row['username'];?></td>
                     <td><?php echo $row['PASSWORD'];?></td>
                     <td> <?php echo $row['email'];?></td>
                     <td><a href = "update_user.php?id=<?php echo $row['id'];?>" class = "btn btn-info">Update</a></td>
@@ -162,7 +163,7 @@ if (!$result){
         <tr>
             
                             <th>id_user</th>
-                            <th>name</th>
+                            <th>username</th>
                             <th>password</th>
                             <th>email</th>
                             <th>Update</th>

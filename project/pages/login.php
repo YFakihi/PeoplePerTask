@@ -1,6 +1,7 @@
 <?php
 include('header.php');
-session_start();
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $pass = $_POST["pass"];
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["email"] = $email; 
         header("location:index.php ");
     }
-    if ($row['ROLE'] == 'admin') {  
+    if ($row['ROLE'] == 'admin') {    
          $_SESSION["email"] = $email; 
         header("location: ../dashboard/dashboard.php");
     }

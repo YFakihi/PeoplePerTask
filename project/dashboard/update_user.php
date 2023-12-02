@@ -33,7 +33,7 @@ if(isset($_POST['update_u']))
 
    
 
-    $query = "UPDATE user SET  mame = '$uname', PASSWORD = '$upass', email = '$uemail'
+    $query = "UPDATE user SET  username = '$uname', PASSWORD = '$upass', email = '$uemail'
     WHERE id = '$idnew'";
 
 $result = mysqli_query($conn, $query);
@@ -48,6 +48,12 @@ else{
 }
 
 ?>
+
+
+
+
+
+
 
 
 
@@ -68,8 +74,8 @@ else{
             <h3>Edit User</h3>
             <form action="update_user.php?id_new=<?php echo $id;?>" method="post" id="form">
                 <div class="form-group">
-                    <label for="email">Name</label>
-                    <input class="form-control" type="text" name="name_u" value="<?php echo $row['mame'] ?>">
+                    <label for="email">username</label>
+                    <input class="form-control" type="text" name="name_u" value="<?php echo $row['username'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="first_name">Password</label>

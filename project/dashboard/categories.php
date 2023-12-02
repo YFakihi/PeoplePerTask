@@ -1,6 +1,7 @@
 <?php include('db.php'); ?>
 <?php
 include('head.php');
+session_start();
 
 ?>  
         <div class="main">
@@ -40,8 +41,7 @@ include('head.php');
                         </div>
                     </div>
                     <div class="inline"></div>
-                    <div class="name">yasin Admin</div>
-                    <ul class="navbar-nav">
+                    <div class="name"><?php echo $_SESSION['email']; ?></div>                    <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
                                 <img src="img/photo_admin.svg" alt="icon">

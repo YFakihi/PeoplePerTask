@@ -1,6 +1,7 @@
 <?php include('db.php'); ?>
 <?php
 include('head.php');
+session_start();
 
 ?>
         <div class="main">
@@ -40,7 +41,7 @@ include('head.php');
                         </div>
                     </div>
                     <div class="inline"></div>
-                    <div class="name">yasin Admin</div>
+                    <div class="name"><?php echo $_SESSION['email']; ?></div>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
@@ -48,8 +49,8 @@ include('head.php');
                             </a>
                             <div class="dropdown-menu dropdown-menu-end position-absolute">
                                 <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Account Setting</a>
-                                <a class="dropdown-item" href="/PeoplePerTask/project/pages/index.html">Log out</a>
+                                <!-- <a class="dropdown-item" href="#">Account Setting</a> -->
+                                <a class="dropdown-item" href="../pages/index.php">Log out</a>
                             </div>
                         </li>
                     </ul>
@@ -147,7 +148,7 @@ if (!$result){
         <tbody>
         
         <?php
-                        $query = "SELECT F.*, U.mame FROM freelances F INNER JOIN user U ON F.id = U.id";
+                        $query = "SELECT F.*, U.username FROM freelances F INNER JOIN user U ON F.id = U.id";
                         
                         $result = mysqli_query($conn, $query);
                         
@@ -163,7 +164,7 @@ if (!$result){
                     <td><?php echo $row['Id_freelance'];?></td>                                          
                     <td><?php echo $row['name_freelince'];?></td>
                     <td><?php echo $row['skills'];?></td>
-                    <td> <?php echo $row['mame'];?></td>
+                    <td> <?php echo $row['username'];?></td>
                     <td><a href = "update_f.php?id=<?php echo $row['Id_freelance'];?>" class = "btn btn-info">Update</a></td>
                     <td><a href = "delete_f.php?id=<?php echo $row['Id_freelance'];?>" class = "btn btn-danger">Delete</a></td>
                  </tr>
