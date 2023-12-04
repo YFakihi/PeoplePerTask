@@ -124,7 +124,7 @@ session_start();
 
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-success" name="add_p" value="Add Projects">
-                </div>
+             </div>
             </div>
         </div>
     </div>

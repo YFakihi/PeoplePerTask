@@ -95,13 +95,15 @@ session_start();
         <?php else: ?>
           <?php echo $_SESSION['email']; ?>
           <ul class="navbar-nav">
+            
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
                                 <img src="images/icons8-user-32.png" alt="icon">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end position-absolute">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Account Setting</a>
+                                <a class="dropdown-item" href="profile_user.php">Profile</a>
+                                <a class="dropdown-item" href="../dashboard/dashboard.php">dashboard</a>
+                                
                                 <a class="dropdown-item" href="logout.php">Log out</a>
                             </div>
                         </li>

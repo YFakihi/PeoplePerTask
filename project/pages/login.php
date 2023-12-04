@@ -1,31 +1,44 @@
 <?php
 include('header.php');
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ 
     $email = $_POST["email"];
     $pass = $_POST["pass"];
 
-    $q = "SELECT * FROM user WHERE email = '$email' AND password = '$pass'";
+    $q = "SELECT * FROM user WHERE  email = '$email' AND password = '$pass'";
     $res = mysqli_query($conn, $q); 
     
-    $row = mysqli_num_rows($res);
-    if ($row != 0) {
-     
+    $count = mysqli_num_rows($res);
+    if ($count != 0) {
+        $row = mysqli_fetch_assoc($res);
     
-    $row = mysqli_fetch_assoc($res);
-
-    if ($row['ROLE'] == 'user') {
-        $_SESSION["email"] = $email; 
-        header("location:index.php ");
+        // Start the session
+        session_start();
+    
+        if ($row['ROLE'] == 'user') {
+           // Set user session details
+           $_SESSION["username"] = $row['username']; 
+           $_SESSION["image"] = $row['image']; 
+           $_SESSION["email"] = $email; 
+           var_dump($_SESSION);
+           $_SESSION["ROLE"] = $row["ROLE"]; 
+           header("location:index.php");
+        } elseif ($row['ROLE'] == 'admin') {
+            // Set admin session details
+            $_SESSION["email"] = $email; 
+            $_SESSION["username"] = $row['username']; 
+            $_SESSION["image"] = $row['image']; 
+            $_SESSION["ROLE"] = $row["ROLE"]; 
+            header("location: ../dashboard/dashboard.php");
+        }
+    } else {
+        // Redirect to login page if credentials are incorrect
+        header("location: login.php");
     }
-    if ($row['ROLE'] == 'admin') {    
-         $_SESSION["email"] = $email; 
-        header("location: ../dashboard/dashboard.php");
-    }
-  }
 }
 ?>
+
     <section class="vh-100 bg-image"style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
@@ -40,6 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example3cg">Your Email</label>
                     <input type="text" id="login-mail_inp" name="email" class="form-control form-control-lg" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3cg"></label>
                   </div>
   
                   <div class="form-outline mb-4 ">

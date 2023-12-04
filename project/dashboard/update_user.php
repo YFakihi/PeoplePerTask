@@ -30,10 +30,12 @@ if(isset($_POST['update_u']))
     $uname = $_POST['name_u'];
     $upass = $_POST['pass_u'];
     $uemail = $_POST['email_u'];
+    $image = $_POST['image'];
+   
 
    
 
-    $query = "UPDATE user SET  username = '$uname', PASSWORD = '$upass', email = '$uemail'
+    $query = "UPDATE user SET  username = '$uname', PASSWORD = '$upass', email = '$uemail',image = '$image'
     WHERE id = '$idnew'";
 
 $result = mysqli_query($conn, $query);
@@ -84,6 +86,16 @@ else{
                 <div class="form-group">
                     <label for="last_name">Email</label>
                     <input class="form-control" type="text" name="email_u" value="<?php echo $row['email'] ?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Role</label>
+                    <input class="form-control" type="text" name="role" value="<?php echo $row['ROLE'] ?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Email</label>
+                    <input class="form-control" type="file" name="image" value="<?php echo $row['image'] ?>">
                 </div>
                 <input type="submit" class="btn btn-success" name="update_u" value="Save Change">
             </form>

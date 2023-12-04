@@ -45,12 +45,13 @@ session_start();
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
-                                <img src="img/photo_admin.svg" alt="icon">
+                            <img src="../pages/images/<?php echo  $_SESSION["image"];?>" class="img-fluid rounded-circle mb-3" style="width: 50px; height: 50px;">
+
                             </a>
                             <div class="dropdown-menu dropdown-menu-end position-absolute">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="profileadmin.php">Profile</a>
                                 <a class="dropdown-item" href="#">Account Setting</a>
-                                <a class="dropdown-item" href="/PeoplePerTask/project/pages/index.html">Log out</a>
+                                <a class="dropdown-item" href="../pages/index.php ">Log out</a>
                             </div>
                         </li>
                     </ul>
@@ -87,6 +88,10 @@ session_start();
                         <label for="f_id_user">email:</label>
                         <input type="text" name="u_email" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label for="f_id_user">image:</label>
+                        <input type="file" name="image" class="form-control">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-success" name="add_u" value="Add">
@@ -102,11 +107,12 @@ if(isset($_POST['add_u']))
     $u_name = $_POST['u_name'];
     $u_pass = $_POST['u_pass'];
     $u_email = $_POST['u_email'];
+    $image = $_POST['image'];
 
     if(empty($u_name)){
         header('location:users.php? message = fill all data!');
     }else{
-    $query = "INSERT INTO user (username, PASSWORD, email) VALUES ('$u_name', '$u_pass', '$u_email')";
+    $query = "INSERT INTO user (username, PASSWORD, email ,image) VALUES ('$u_name', '$u_pass', '$u_email', '$image')";
     $result = mysqli_query($conn, $query);
     }
  
@@ -123,10 +129,12 @@ if (!$result){
 <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                              <th>id_user</th>
+                            <th>id_user</th>
                             <th>username</th>
                             <th>password</th>
                             <th>email</th>
+                            <th>role</th>
+                            <th>image</th>
                             <th>Update</th>
                             <th>Delete</th>
             </tr>
@@ -150,6 +158,8 @@ if (!$result){
                     <td><?php echo $row['username'];?></td>
                     <td><?php echo $row['PASSWORD'];?></td>
                     <td> <?php echo $row['email'];?></td>
+                    <td> <?php echo $row['ROLE'];?></td>
+                    <td> <?php echo $row['image'];?></td>
                     <td><a href = "update_user.php?id=<?php echo $row['id'];?>" class = "btn btn-info">Update</a></td>
                     <td><a href = "delete_user.php?id=<?php echo $row['id'];?>" class = "btn btn-danger">Delete</a></td>
                  </tr>
@@ -166,6 +176,8 @@ if (!$result){
                             <th>username</th>
                             <th>password</th>
                             <th>email</th>
+                            <th>role</th>
+                            <th>image</th>
                             <th>Update</th>
                             <th>Delete</th>
             </tr>

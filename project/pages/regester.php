@@ -32,6 +32,17 @@ include('header.php')
                       />
                       <span id="name_reg_err" class="text text-danger"></span>
                     </div>
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form3Example3cg"
+                        >Image</label
+                      >
+                      <input
+                        type="file"
+                        id="mail_inp" name = "image"
+                        class="form-control form-control-lg"
+                      />
+                      <span id="email_reg_err" class="text text-danger"></span>
+                    </div>
 
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example3cg"
