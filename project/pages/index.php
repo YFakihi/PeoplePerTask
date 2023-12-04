@@ -1,6 +1,8 @@
 <?php
 
 include('header.php');
+
+
 ?>
   <!-- hero section -->
   <section class="hero">
@@ -51,6 +53,12 @@ include('header.php');
         <div class="card-body">
           <h5 class="card-title"><?php echo $row['titre']; ?></h5>
           <p class="card-text"><?php echo $row['description']; ?>.</p>
+          
+                 
+<?php if (isset($_SESSION['email']) && isset($_SESSION['ROLE']) ): 
+       if($_SESSION['ROLE'] == 'freelincer'){?>
+        <a class="btn btn-primary me-2 sign-style-color" href="regester.php" role="button">Apply now</a>  
+        <?php }endif; ?>
          
         </div>
       </div>

@@ -50,10 +50,10 @@ if(!isset($_SESSION["email"]))
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-icon pe-md-0 position-relative" data-bs-toggle="dropdown">
-                                <img src="img/photo_admin.svg" alt="icon">
+                            <img src="../pages/images/<?php echo  $_SESSION["image"];?>" class="img-fluid rounded-circle mb-3" style="width: 50px; height: 50px;">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end position-absolute">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="# ">Profile</a>
                                 <a class="dropdown-item" href="#">Account Setting</a>
                                 <a class="dropdown-item" href="/PeoplePerTask/project/pages/index.html">Log out</a>
                             </div>

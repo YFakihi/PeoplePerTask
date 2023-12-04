@@ -27,7 +27,10 @@ if($_POST["password"] !== $_POST["confpassword"]){
 
 // $pssw_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$query = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
+$query = "INSERT INTO user (username, email, password, image) VALUES (?, ?, ?, 'default_image.jpg')";
+
+
+
 $res = mysqli_prepare($conn, $query);
 
 if (!$res) {

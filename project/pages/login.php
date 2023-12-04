@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($res);
     
         // Start the session
-        session_start();
+
     
         if ($row['ROLE'] == 'user') {
            // Set user session details
@@ -22,14 +22,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            $_SESSION["image"] = $row['image']; 
            $_SESSION["email"] = $email; 
            var_dump($_SESSION);
-           $_SESSION["ROLE"] = $row["ROLE"]; 
            header("location:index.php");
-        } elseif ($row['ROLE'] == 'admin') {
+        } 
+
+        elseif ($row['ROLE'] == 'freelincer') {
+   
+          $_SESSION["username"] = $row['username']; 
+          $_SESSION["ROLE"] = $row['ROLE']; 
+          $_SESSION["image"] = $row['image']; 
+          $_SESSION["email"] = $email; 
+         
+          echo '<script type="text/javascript">';
+          echo 'window.location.href = ./index.php';
+          echo '</script>';
+          exit();
+       } 
+        
+        
+        elseif ($row['ROLE'] == 'admin') {
             // Set admin session details
             $_SESSION["email"] = $email; 
             $_SESSION["username"] = $row['username']; 
             $_SESSION["image"] = $row['image']; 
-            $_SESSION["ROLE"] = $row["ROLE"]; 
+             $_SESSION["ROLE"] = $row["ROLE"]; 
             header("location: ../dashboard/dashboard.php");
         }
     } else {
@@ -145,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <span class="text-light">
            ©
            <span id="copyright" class="text-light">
-              <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+              <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</>
               <span class="text-light">By Goch tavn and Per Task Team</span>
            </span>
   

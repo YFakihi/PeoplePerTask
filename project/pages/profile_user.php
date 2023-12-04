@@ -26,12 +26,14 @@ include('header.php');
             <img src="images/<?php echo  $_SESSION["image"];?>" class="img-fluid rounded-circle mb-3" style="width: 170px; height: 170px;">
             
             <h4 class="card-subtitle mb-2 text-muted"><?php echo  $_SESSION["username"]; ?></h4>
-            
-            
-            <!-- <p class="card-text">Description about the user goes here.</p>
-            <p class="card-text">Skills: Skill 1, Skill 2, Skill 3</p>
-            <p class="card-text">Location: City, Country</p> -->
+<!--             
+            <?php if (isset($_SESSION['email']) && $_SESSION['ROLE'] == 'freelincer'): ?>
 
+            <p class="card-text">Description about the user goes here.</p>
+            <p class="card-text">Skills: Skill 1, Skill 2, Skill 3</p>
+            <p class="card-text">Location: City, Country</p> 
+
+            <?php endif; ?> -->
             <!-- <hr>
             <h5 class="card-title">Services Offered:</h5>
             <ul class="list-group">
