@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            $_SESSION["username"] = $row['username']; 
            $_SESSION["image"] = $row['image']; 
            $_SESSION["email"] = $email; 
-           var_dump($_SESSION);
+          //  var_dump($_SESSION);
            header("location:index.php");
         } 
 
@@ -31,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $_SESSION["ROLE"] = $row['ROLE']; 
           $_SESSION["image"] = $row['image']; 
           $_SESSION["email"] = $email; 
-         
-          echo '<script type="text/javascript">';
-          echo 'window.location.href = ./index.php';
-          echo '</script>';
-          exit();
+          header("location:index.php");
+          // echo '<script type="text/javascript">';
+          // echo 'window.location.href = ./index.php';
+          // echo '</script>';
+         // exit();
        } 
         
         

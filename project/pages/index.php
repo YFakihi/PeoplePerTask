@@ -57,7 +57,7 @@ include('header.php');
                  
 <?php if (isset($_SESSION['email']) && isset($_SESSION['ROLE']) ): 
        if($_SESSION['ROLE'] == 'freelincer'){?>
-        <a class="btn btn-primary me-2 sign-style-color" href="regester.php" role="button">Apply now</a>  
+        <a class="btn btn-primary me-2 sign-style-color" href="offer.php" role="button">Apply now</a>  
         <?php }endif; ?>
          
         </div>
