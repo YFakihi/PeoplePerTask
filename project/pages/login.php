@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($row['ROLE'] == 'user') {
            // Set user session details
            $_SESSION["username"] = $row['username']; 
+           $_SESSION["id"] = $row["id"]; 
            $_SESSION["image"] = $row['image']; 
            $_SESSION["email"] = $email; 
           //  var_dump($_SESSION);
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $_SESSION["username"] = $row['username']; 
           $_SESSION["ROLE"] = $row['ROLE']; 
           $_SESSION["image"] = $row['image']; 
+          $_SESSION["id"] = $row["id"]; 
           $_SESSION["email"] = $email; 
           header("location:index.php");
           // echo '<script type="text/javascript">';
@@ -42,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         elseif ($row['ROLE'] == 'admin') {
             // Set admin session details
             $_SESSION["email"] = $email; 
+            $_SESSION["id"] = $row["id"]; 
             $_SESSION["username"] = $row['username']; 
             $_SESSION["image"] = $row['image']; 
              $_SESSION["ROLE"] = $row["ROLE"]; 
@@ -153,22 +156,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
   
-    </div>
-    <div class="row align-items-center g-0 border-top py-2 mt-6">
-     <!-- Desc -->
-     <div class="col-lg-4 col-md-5 col-12">
-        <span class="text-light">
-           ©
-           <span id="copyright" class="text-light">
-              <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</>
-              <span class="text-light">By Goch tavn and Per Task Team</span>
-           </span>
-  
-        </span>
-     </div>
-    </div>
-    </div>
-    </footer>
-  <script src="javascript/valid_login.js"></script>
+    
 </body>
 </html>

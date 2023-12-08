@@ -41,8 +41,11 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="about.php">about</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="pack.php">Pricing</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="find_project.php">Find-Projects</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="recherch.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,13 +80,13 @@ session_start();
           
         </ul>
         
-        <form class="d-flex input-group w-auto">
+        <!-- <form class="d-flex input-group w-auto">
           <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
             aria-describedby="search-addon" />
           <span class="input-group-text border-0" id="search-addon">
             <img src="images/searchicon.svg" alt="">
           </span>
-        </form> 
+        </form>  -->
         
       <?php if (!isset($_SESSION['email'])): ?>
         <a class="btn btn-primary me-2 sign-style-color" href="regester.php" role="button">Sign up</a>
@@ -93,7 +96,7 @@ session_start();
 
         
         <?php else: ?>
-          <?php echo $_SESSION['email']; ?>
+          <?php echo 'Hello'.' ' .$_SESSION['username']; ?>
           <ul class="navbar-nav">
             
                         <li class="nav-item dropdown">

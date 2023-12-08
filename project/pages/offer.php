@@ -1,27 +1,46 @@
-<?php
 
+<?php
 include('header.php');
+
+if (isset($_GET['project_id'])) {
+  $project_id = (int) $_GET['project_id'];
+} else {
+  die("Missing project ID in URL");
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $amount = $_POST['amount'];
+  $deadline = $_POST['deadline'];
+  $project_id = $_POST['project_id'];
+  $freelancer_id = $_SESSION["id"]; 
+
+  $insert_query = "INSERT INTO proposel (id_project, id) VALUES ('$project_id', '$freelancer_id')";
+  $insert_result = mysqli_query($conn, $insert_query);
+
+  if ($insert_result) {
+      echo "Proposal submitted successfully!";
+  } else {
+      echo "Error submitting proposal: " . mysqli_error($conn);
+  }
+}
 
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submit Offer</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container mt-5">
+      <!DOCTYPE html>  
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Submit Offer</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       </head>                          <body>
+      <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title">Submit Offer</h2>
-            <form method="post" action="process_offer.php"> <!-- Change 'process_offer.php' to your processing page -->
+            <form method="post" action="">
               <div class="form-group">
                 <label for="amount">Amount:</label>
                 <input type="number" name="amount" class="form-control" required>
@@ -30,9 +49,10 @@ include('header.php');
                 <label for="deadline">Deadline:</label>
                 <input type="date" name="deadline" class="form-control" required>
               </div>
-              <input type="hidden" name="id_project" value="123"> <!-- Replace '123' with the actual project ID -->
-              <input type="hidden" name="Id_freelance" value="456"> <!-- Replace '456' with the freelancer's ID -->
-              <button type="submit" class="btn btn-primary">Submit Offer</button>
+              <div class="form-group">
+                <input type="hidden" name="project_id" value="<?php echo $project_id; ?>">
+              </div>
+              <button type="submit">Submit Offer</button>
             </form>
           </div>
         </div>
@@ -40,7 +60,9 @@ include('header.php');
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+                         
+
+                            <!-- Bootstrap JS -->
+                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                          </body>
+                          </html>

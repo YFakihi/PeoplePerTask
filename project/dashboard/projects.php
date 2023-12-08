@@ -145,14 +145,8 @@ if(isset($_POST['add_p']))
     $result = mysqli_query($conn, $query);
     }
  
-if (!$result){
-    die("query failed ".mysali_error());
-}
-// else
-// {
-//     header('location:agents.php?insert_msg your insert successfuly');
-// }
-  
+
+
 }
 ?>
 
@@ -187,7 +181,7 @@ if (!$result){
 
                         $result = mysqli_query($conn,$query);
                         if(!$result){
-                            die("query faild".mysali_error());
+                            die("query faild". mysqli_error($conn));
                         }
                         else{
 
@@ -195,22 +189,6 @@ if (!$result){
                        while($row = mysqli_fetch_assoc($result)){
 
                         ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <?php
 
         

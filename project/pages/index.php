@@ -41,7 +41,7 @@ include('header.php');
   </section>
   <section class="row m-2">
   <?php
-  $query = "SELECT * FROM project";
+  $query = "SELECT * FROM project  LIMIT 3";
   $result = mysqli_query($conn, $query);
 
 
@@ -55,16 +55,19 @@ include('header.php');
           <p class="card-text"><?php echo $row['description']; ?>.</p>
           
                  
-<?php if (isset($_SESSION['email']) && isset($_SESSION['ROLE']) ): 
-       if($_SESSION['ROLE'] == 'freelincer'){?>
-        <a class="btn btn-primary me-2 sign-style-color" href="offer.php" role="button">Apply now</a>  
-        <?php }endif; ?>
+<?php /*if (isset($_SESSION['email']) && isset($_SESSION['ROLE']) ): 
+       if($_SESSION['ROLE'] == 'freelincer'){
+        */?>
+        <a class="btn btn-primary me-2 sign-style-color" href="details_product.php?id= <?php echo  $row['id_project']; ?>" role="button">More</a>  
+        
          
         </div>
       </div>
     </div>
   <?php
+  
   }
+  
   ?>
 </section>
 
@@ -653,9 +656,7 @@ if(isset($_POST['add_t']))
     $result = mysqli_query($conn, $query);
     }
  
-if (!$result){
-    die("query failed ".mysqli_error());
-}
+
 
   
 }
