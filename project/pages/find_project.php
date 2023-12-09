@@ -8,7 +8,7 @@ include('header.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Display</title>
-  <!-- Bootstrap CSS -->
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -16,7 +16,7 @@ include('header.php');
     <div class="row">
       <div class="col-md-3">
         <h2>Filters</h2>
-        <!-- Add filter options here -->
+       
         <form>
           <div class="form-group">
             <label for="category">Category:</label>
@@ -41,7 +41,7 @@ include('header.php');
       </div>
       <div class="col-md-9">
         <h2>All Projects</h2>
-        <!-- Display projects here -->
+       
         <div class="container">
   <div class="row">
     <?php
