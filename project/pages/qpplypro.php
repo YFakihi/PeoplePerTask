@@ -10,6 +10,7 @@ if (isset($_POST['id'])){
     WHERE id_proposel = $id";
 
 $result = mysqli_query($conn, $query);
+header('location: profile_user.php');
 
  
 }
