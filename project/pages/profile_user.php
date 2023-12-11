@@ -361,7 +361,7 @@ include('header.php');
                       <td>
                         <a href="update_pro.php" class="btn btn-info">Accept</a>
                       </td>
-                      <td><a href="update_pro.php" class="btn btn-danger">delete</a></td>
+                      <td><a href="update_pro.php" class="btn btn-danger">cancel</a></td>
                      
                     </tr>
                 <?php
