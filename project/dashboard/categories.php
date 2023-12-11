@@ -100,7 +100,7 @@ if(isset($_POST['add_c']))
     }
  
 if (!$result){
-    die("query failed ".mysali_error());
+    die("query failed ".mysqli_error($conn));
 }
 // else
 // {
@@ -128,7 +128,7 @@ if (!$result){
                         $query = "select * from categores";
                         $result = mysqli_query($conn,$query);
                         if(!$result){
-                            die("query faild".mysali_error());
+                            die("query failed ".mysqli_error($conn));
                         }
                         else{
 

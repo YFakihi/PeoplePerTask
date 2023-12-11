@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
     $res = mysqli_query($conn ,$sql);
 
     if(!$res){
-        die("query Failed".mysali_error());
+        die("query Failed".mysqli_error($conn));
     }
     else{
         $row = mysqli_fetch_assoc($res);
@@ -44,7 +44,7 @@ $result = mysqli_query($conn, $query);
 
 
 if(!$result){
-    die("deleted faild".mysqli_error());
+    die("deleted faild".mysqli_error($conn));
 }
 else{
     header('location:projects.php?delete_msg your update is  successfuly');

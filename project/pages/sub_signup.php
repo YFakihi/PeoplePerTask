@@ -51,7 +51,7 @@ if (!mysqli_stmt_execute($res)) {
     die("Query execution failed: " . mysqli_stmt_error($res));
 }
 
-header("location: success_signup.html");
+header("location: login.php");
 
 mysqli_stmt_close($res);
 mysqli_close($conn);
