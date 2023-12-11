@@ -185,7 +185,6 @@ include('header.php');
                   <th>image</th>
                   <th>Titre</th>
                   <th>name_cat</th>
-
                   <th>name_user</th>
                   <th>description</th>
                   <!-- <th>Update</th>
@@ -280,9 +279,8 @@ include('header.php');
 
                   $result = mysqli_query($conn, $query);
 
-                  // Displaying the fetched proposals
                   while ($row = mysqli_fetch_assoc($result)) {
-                    // Display the proposal information as needed
+             
                 ?>
                     <tr>
                       <td><?php echo $row['id_proposel']; ?></td>
@@ -347,9 +345,9 @@ include('header.php');
 
                   $result = mysqli_query($conn, $query);
 
-                  // Displaying the fetched proposals
+                  
                   while ($row = mysqli_fetch_assoc($result)) {
-                    // Display the proposal information as needed
+                    
                 ?>
                     <tr>
                       <td><?php echo $row['id_proposel']; ?></td>
